@@ -7,31 +7,24 @@ import org.drools.core.RuleBase;
 import org.drools.core.WorkingMemory;
 
 import com.google.common.base.Verify;
+import com.utils.CheckFacts;
 
-public class CheckFacts {
+public class CheckProductFacts extends CheckFacts<Product> {
 	
-	private List<Product> prepareFacts(){
+	public List<Product> prepareFacts(){
 		return Arrays.asList(new Product[]{
 			new Product("gold"),
 			new Product("diamond"),
 		});
-		
 	}
 	
-	public WorkingMemory checkFacts(RuleBase ruleBase) {
-		WorkingMemory workingMemory = ruleBase.newStatefulSession();
+	public List<Product>  checkFacts(RuleBase ruleBase) {
+		List<Product> products = super.checkFacts(ruleBase);
 
-		List<Product> products = prepareFacts();
-		for(Product product: products) {
-			workingMemory.insert(product);
-		}
-
-		workingMemory.fireAllRules();
-		
 		Verify.verify(products.get(0).getDiscount() == 25);
 		Verify.verify(products.get(1).getDiscount() == 15);
 		
-		return workingMemory;
+		return products;
 	}
 
 }

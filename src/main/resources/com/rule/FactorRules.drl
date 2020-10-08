@@ -1,0 +1,36 @@
+import com.sample.model.Factor
+
+rule "Aaa+"
+when
+  factor:Factor (value < 0.5)
+then
+  factor.setRating('Aaa+');
+end
+
+rule "Aaa"
+when
+  factor:Factor (value >= 0.5 && value < 1.5)
+then
+  factor.setRating('Aaa');
+end
+
+rule "Aa1"
+when
+  factor:Factor (value >= 1.5 && value < 1.83)
+then
+  factor.setRating('Aa1');
+end
+
+rule "Aa2"
+when
+  factor:Factor (value >= 1.83 && value < 2.17)
+then
+  factor.setRating('Aa2');
+end
+
+rule "Aa3"
+when
+  factor:Factor (value >= 2.17 && value < 2.5)
+then
+  factor.setRating('Aa3');
+end

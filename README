@@ -1,5 +1,7 @@
-Implements the example develop by javainuse:
+Implements simple drools examples:
 
-https://www.javainuse.com/drools_hello
+FactorTest
 
-The steps to setup the project from scratch can be found here
+ProductTest
+
+- https://www.javainuse.com/drools_hello

@@ -1,15 +1,21 @@
-package com.sample;
+package com.sample.model;
 
 public class Factor {
 	
-	private float value;
+	private Double value;
 	private String rating = "";
+	
+	public Factor() {}
+	
+	public Factor(Double value) {
+		this.value = value;
+	}
 
-	public float getValue() {
+	public Double getValue() {
 		return value;
 	}
 
-	public void setValue(float value) {
+	public void setValue(Double value) {
 		this.value = value;
 	}
 	
