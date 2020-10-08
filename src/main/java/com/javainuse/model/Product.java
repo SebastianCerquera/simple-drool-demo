@@ -4,6 +4,12 @@ public class Product {
 
 	private String type;
 	private int discount;
+	
+	public Product() {}
+	
+	public Product(String type) {
+		this.type = type;
+	}
 
 	public String getType() {
 		return type;
