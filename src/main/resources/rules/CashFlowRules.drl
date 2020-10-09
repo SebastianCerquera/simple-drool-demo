@@ -1,0 +1,24 @@
+import com.sample.accounting.Account
+import com.sample.accounting.CashFlow
+import com.sample.accounting.CashFlowType
+import com.sample.accounting.AccountPeriod
+
+rule "Increase balance for AccountPeriod Credits"
+when
+   ap : AccountPeriod( )
+   $acc : Account( )
+   cf : CashFlow( type == CashFlowType.CREDIT,
+             accountNo == $acc.accountNo,
+             date >= ap.start && <= ap.end )
+then
+   $acc.setBalance($acc.getBalance() + cf.getAmount());
+end
+
+rule "Decrease balance for AccountPeriod Debits"
+when
+   ap : AccountPeriod( )
+   $acc : Account( )
+   cf : CashFlow( type == CashFlowType.DEBIT, accountNo == $acc.accountNo, date >= ap.start && <= ap.end )
+then
+   $acc.setBalance($acc.getBalance() - cf.getAmount());
+end

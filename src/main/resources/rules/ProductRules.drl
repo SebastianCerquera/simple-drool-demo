@@ -1,5 +1,3 @@
-package com.rule
-
 import com.javainuse.model.Product
 
 rule "Offer for Diamond"
