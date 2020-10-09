@@ -1,4 +1,4 @@
-package com.sample.model;
+package com.sample.factor;
 
 public class Factor {
 	

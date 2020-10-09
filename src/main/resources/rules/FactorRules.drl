@@ -1,4 +1,4 @@
-import com.sample.model.Factor
+import com.sample.factor.Factor
 
 rule "Aaa+"
 when

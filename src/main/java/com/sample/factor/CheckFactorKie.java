@@ -1,19 +1,13 @@
-package com.sample.model;
+package com.sample.factor;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.drools.core.RuleBase;
-
 import com.google.common.base.Verify;
-import com.utils.CheckFacts;
+import com.utils.KieFacts;
 
-public class CheckFactorFacts extends CheckFacts<Factor>{
+public class CheckFactorKie extends KieFacts<Factor>{
 	
-	public CheckFactorFacts(RuleBase ruleBase) {
-		super(ruleBase);
-	}
-
 	public List<Factor> prepareFacts() {
 		return Arrays.asList(new Factor[]{
 			new Factor(0.3),

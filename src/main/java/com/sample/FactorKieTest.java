@@ -1,6 +1,6 @@
 package com.sample;
 
-import com.sample.model.CheckFactorKie;
+import com.sample.factor.CheckFactorKie;
 
 public class FactorKieTest {
 	

@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.drools.compiler.compiler.DroolsParserException;
 import org.drools.core.RuleBase;
 
-import com.sample.model.CheckFactorFacts;
+import com.sample.factor.CheckFactorFacts;
 import com.utils.RulesLoader;
 
 public class FactorTest {
