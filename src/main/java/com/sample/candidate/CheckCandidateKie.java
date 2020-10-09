@@ -27,14 +27,16 @@ public class CheckCandidateKie extends KieFacts<Candidate>{
 
 		Verify.verify(candidate.getStatus() == "Testing");
 		
-		/* 
+		
 		InterviewScore interviewScore = new InterviewScore(1.0, 1.0, 1.0);
 		candidate.setInterviewScore(interviewScore);
 		candidate.setStatus("Interview");
-		super.updateFacts(Arrays.asList(new Candidate[]{}));
-		*/
+		super.updateFacts(Arrays.asList(new Candidate[]{
+				candidate
+		}));
 		
-		//Verify.verify(candidate.getStatus() == "Project");
+		
+		Verify.verify(candidate.getStatus() == "Project");
 		
 		// setters
 		
