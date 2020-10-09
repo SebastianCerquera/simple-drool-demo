@@ -10,7 +10,7 @@ import org.drools.compiler.compiler.PackageBuilder;
 import org.drools.core.RuleBase;
 import org.drools.core.RuleBaseFactory;
 
-public class DroolsExecutor {
+public class RulesLoader {
 
 	public RuleBase loadRule(String ruleFile) 
 			throws DroolsParserException, IOException {
