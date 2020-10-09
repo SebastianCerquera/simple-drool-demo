@@ -13,7 +13,7 @@ public class FactorTest {
 	public static void main(String[] args) throws DroolsParserException, IOException {
 
 		DroolsExecutor executor = new DroolsExecutor();
-		RuleBase ruleBase = executor.loadRule("/com/rule/FactorRules.drl");
+		RuleBase ruleBase = executor.loadRule("/rules/FactorRules.drl");
 
 		CheckFactorFacts facts = new CheckFactorFacts(ruleBase);
 		facts.checkFacts();

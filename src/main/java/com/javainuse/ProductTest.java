@@ -14,7 +14,7 @@ public class ProductTest {
 			IOException {
 		
 		DroolsExecutor executor = new DroolsExecutor();
-		RuleBase ruleBase =  executor.loadRule("/com/rule/ProductRules.drl");
+		RuleBase ruleBase =  executor.loadRule("/rules/ProductRules.drl");
 		
 		CheckProductFacts facts = new CheckProductFacts(ruleBase);
 		facts.checkFacts();
