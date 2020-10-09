@@ -11,6 +11,10 @@ import com.utils.CheckFacts;
 
 public class CheckProductFacts extends CheckFacts<Product> {
 	
+	public CheckProductFacts(RuleBase ruleBase) {
+		super(ruleBase);
+	}
+	
 	public List<Product> prepareFacts(){
 		return Arrays.asList(new Product[]{
 			new Product("gold"),
@@ -18,8 +22,8 @@ public class CheckProductFacts extends CheckFacts<Product> {
 		});
 	}
 	
-	public List<Product>  checkFacts(RuleBase ruleBase) {
-		List<Product> products = super.checkFacts(ruleBase);
+	public List<Product>  checkFacts() {
+		List<Product> products = super.checkFacts();
 
 		Verify.verify(products.get(0).getDiscount() == 25);
 		Verify.verify(products.get(1).getDiscount() == 15);

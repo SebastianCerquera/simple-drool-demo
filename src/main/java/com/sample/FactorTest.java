@@ -15,8 +15,8 @@ public class FactorTest {
 		DroolsExecutor executor = new DroolsExecutor();
 		RuleBase ruleBase = executor.loadRule("/com/rule/FactorRules.drl");
 
-		CheckFactorFacts facts = new CheckFactorFacts();
-		facts.checkFacts(ruleBase);
+		CheckFactorFacts facts = new CheckFactorFacts(ruleBase);
+		facts.checkFacts();
 	}
 
 }

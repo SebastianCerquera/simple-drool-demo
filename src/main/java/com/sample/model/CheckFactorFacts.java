@@ -9,6 +9,10 @@ import com.google.common.base.Verify;
 import com.utils.CheckFacts;
 
 public class CheckFactorFacts extends CheckFacts<Factor>{
+	
+	public CheckFactorFacts(RuleBase ruleBase) {
+		super(ruleBase);
+	}
 
 	public List<Factor> prepareFacts() {
 		return Arrays.asList(new Factor[]{
@@ -20,8 +24,8 @@ public class CheckFactorFacts extends CheckFacts<Factor>{
 		});
 	}
 
-	public List<Factor> checkFacts(RuleBase ruleBase) {
-		List<Factor> factors = super.checkFacts(ruleBase);
+	public List<Factor> checkFacts() {
+		List<Factor> factors = super.checkFacts();
 
 		Verify.verify(factors.get(0).getRating() == "Aaa+");
 		Verify.verify(factors.get(1).getRating() == "Aaa");

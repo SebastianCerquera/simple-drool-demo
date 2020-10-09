@@ -16,8 +16,8 @@ public class ProductTest {
 		DroolsExecutor executor = new DroolsExecutor();
 		RuleBase ruleBase =  executor.loadRule("/com/rule/ProductRules.drl");
 		
-		CheckProductFacts facts = new CheckProductFacts();
-		facts.checkFacts(ruleBase);
+		CheckProductFacts facts = new CheckProductFacts(ruleBase);
+		facts.checkFacts();
 	}
 
 }
