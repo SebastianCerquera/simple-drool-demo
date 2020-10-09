@@ -7,21 +7,23 @@ import org.drools.core.WorkingMemory;
 
 public abstract class CheckFacts<E> implements Facts<E>{
 	
-	protected RuleBase ruleBase;
+	private WorkingMemory workingMemory;
 	
 	public CheckFacts(RuleBase ruleBase) {
-		this.ruleBase = ruleBase;
+		this.workingMemory = ruleBase.newStatefulSession();
 	}
 	
 	protected abstract List<E> prepareFacts();
 	
-	public List<E> checkFacts() {
-		WorkingMemory workingMemory = this.ruleBase.newStatefulSession();
-
-		List<E> entities = prepareFacts();
-		for(Object entity: entities) {
+	public void updateFacts(List<E> newFacts) {
+		for(Object entity: newFacts) {
 			workingMemory.insert(entity);
 		}
+	}
+	
+	public List<E> checkFacts() {
+		List<E> entities = prepareFacts();
+		updateFacts(entities);
 
 		workingMemory.fireAllRules();
 		
