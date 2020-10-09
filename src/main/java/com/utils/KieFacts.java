@@ -1,16 +1,24 @@
 package com.utils;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
+import org.kie.api.runtime.rule.FactHandle;
+
 public abstract class KieFacts<E> implements Facts<E>{
+	
+	private Map<Integer, FactHandle> handles;
 	
 	private KieSession kSession;
 	
 	public KieFacts() {
+		handles = new HashMap<Integer, FactHandle>();
+		
 		KieServices ks = KieServices.Factory.get();
 		KieContainer kContainer = ks.getKieClasspathContainer();
 		
@@ -23,7 +31,13 @@ public abstract class KieFacts<E> implements Facts<E>{
 	
 	public void updateFacts(List<E> newFacts) {
 		for(Object entity: newFacts) {
-			this.kSession.insert(entity);
+			FactHandle handle = handles.get(entity.hashCode());
+			if(handle == null) {
+				handle = this.kSession.insert(entity);
+				handles.put(entity.hashCode(), handle);
+			} else {
+				this.kSession.update(handle, entity);
+			}
 		}
 
 		this.kSession.fireAllRules();
