@@ -2,6 +2,8 @@ package com.sample.candidate;
 
 public class Candidate {
 	
+	private Integer id;
+	
 	private String status;
 	
 	private Integer yrsExperience;
@@ -14,9 +16,13 @@ public class Candidate {
 	
 	private ProjectScore projectScore;
 	
-	public Candidate() {}
+	public Candidate(Integer id) {
+		this.id = id;
+	}
 	
-	public Candidate(Integer yrsExperience, String status, Skill skill) {
+	public Candidate(Integer id, Integer yrsExperience, String status, Skill skill) {
+		this(id);
+		
 		this.yrsExperience = yrsExperience;
 		this.skill = skill;
 		this.status = status;
@@ -68,6 +74,16 @@ public class Candidate {
 
 	public void setSkill(Skill skill) {
 		this.skill = skill;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return this.id == ((Candidate) obj).id;
+	}
+	
+	@Override
+	public int hashCode() {
+		return super.hashCode();
 	}
 	
 }

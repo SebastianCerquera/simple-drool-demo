@@ -25,12 +25,12 @@ public abstract class KieFacts<E> implements Facts<E>{
 		for(Object entity: newFacts) {
 			this.kSession.insert(entity);
 		}
+
+		this.kSession.fireAllRules();
 	}
 	public List<E> checkFacts() {
 		List<E> entities = prepareFacts();
 		updateFacts(entities);
-
-		this.kSession.fireAllRules();
 		
 		return entities;
 	}

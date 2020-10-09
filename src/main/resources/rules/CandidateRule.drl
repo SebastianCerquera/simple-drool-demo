@@ -12,14 +12,14 @@ then
 	$candidate.setStatus('Testing');
 end
 
-/*
 rule "Schedule For Project"
 when
-	$candidate: Candidate(status=='Interview', 	interviewScore(speakExperience>.9 && problemSolving>.8 && communication>.9 );
+	$candidate: Candidate(status=='Interview', 	(interviewScore.speakExperience>.9 && interviewScore.problemSolving>.8 && interviewScore.communication>.9) );
 then
 	$candidate.setStatus('Project');
 end
 
+/*
 rule "Schedule For Hiring"
 when
 	$candidate: Candidate(status=='Project', projectScore(completeness>.8 && architecture>.9 && gui>.7 );

@@ -19,13 +19,13 @@ public abstract class CheckFacts<E> implements Facts<E>{
 		for(Object entity: newFacts) {
 			workingMemory.insert(entity);
 		}
+		
+		workingMemory.fireAllRules();
 	}
 	
 	public List<E> checkFacts() {
 		List<E> entities = prepareFacts();
 		updateFacts(entities);
-
-		workingMemory.fireAllRules();
 		
 		return entities;
 	}

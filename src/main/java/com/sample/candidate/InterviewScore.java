@@ -7,6 +7,14 @@ public class InterviewScore {
 	private Double problemSolving;
 	
 	private Double communication;
+	
+	public InterviewScore() {}
+	
+	public InterviewScore(Double speakExperience, Double problemSolving, Double communication) {
+		this.speakExperience = speakExperience;
+		this.problemSolving = problemSolving;
+		this.communication = communication;
+	}
 
 	public Double getSpeakExperience() {
 		return speakExperience;
