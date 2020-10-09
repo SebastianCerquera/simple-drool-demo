@@ -27,9 +27,17 @@ public class CheckCandidateKie extends KieFacts<Candidate>{
 		Verify.verify(candidate.getStatus() == "Testing");
 		
 		// Checks the interview results
+		TestScore testScore = new TestScore(1.0, 1.0, 1.0);
+		candidate.setTestScore(testScore);
+		super.updateFacts(Arrays.asList(new Candidate[]{
+				candidate
+		}));
+		
+		Verify.verify(candidate.getStatus() == "Interview");
+		
+		// Checks the interview results
 		InterviewScore interviewScore = new InterviewScore(1.0, 1.0, 1.0);
 		candidate.setInterviewScore(interviewScore);
-		candidate.setStatus("Interview");
 		super.updateFacts(Arrays.asList(new Candidate[]{
 				candidate
 		}));

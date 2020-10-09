@@ -7,6 +7,14 @@ public class TestScore {
 	private Double syntax;
 	
 	private Double problemSolving;
+	
+	public TestScore() {}
+
+	public TestScore(Double theory, Double syntax, Double problemSolving) {
+		this.theory = theory;
+		this.syntax = syntax;
+		this.problemSolving = problemSolving;
+	}
 
 	public Double getTheory() {
 		return theory;
