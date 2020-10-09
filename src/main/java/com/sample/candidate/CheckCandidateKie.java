@@ -24,10 +24,9 @@ public class CheckCandidateKie extends KieFacts<Candidate>{
 		List<Candidate> candidates = super.checkFacts();
 		
 		Candidate candidate = candidates.get(0);
-
 		Verify.verify(candidate.getStatus() == "Testing");
 		
-		
+		// Checks the interview results
 		InterviewScore interviewScore = new InterviewScore(1.0, 1.0, 1.0);
 		candidate.setInterviewScore(interviewScore);
 		candidate.setStatus("Interview");
@@ -35,12 +34,16 @@ public class CheckCandidateKie extends KieFacts<Candidate>{
 				candidate
 		}));
 		
-		
 		Verify.verify(candidate.getStatus() == "Project");
 		
-		// setters
+		// Checks the project results
+		ProjectScore projectScore = new ProjectScore(1.0, 1.0, 1.0);
+		candidate.setProjectScore(projectScore);
+		super.updateFacts(Arrays.asList(new Candidate[]{
+				candidate
+		}));
 		
-		//Verify.verify(candidate.getStatus() == "Hiring");
+		Verify.verify(candidate.getStatus() == "Hiring");
 		
 		return candidates;
 	}

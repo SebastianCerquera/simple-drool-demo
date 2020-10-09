@@ -8,6 +8,14 @@ public class ProjectScore {
 	
 	private Double gui;
 
+	public ProjectScore() {}
+	
+	public ProjectScore(Double completeness, Double architecture, Double gui) {
+		this.completeness = completeness;
+		this.architecture = architecture;
+		this.gui = gui;
+	}
+	
 	public Double getCompleteness() {
 		return completeness;
 	}

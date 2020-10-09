@@ -19,11 +19,9 @@ then
 	$candidate.setStatus('Project');
 end
 
-/*
 rule "Schedule For Hiring"
 when
-	$candidate: Candidate(status=='Project', projectScore(completeness>.8 && architecture>.9 && gui>.7 );
+	$candidate: Candidate(status=='Project', (projectScore.completeness>.8 && projectScore.architecture>.9 && projectScore.gui>.7) );
 then
 	$candidate.setStatus('Hiring');
 end
-*/
