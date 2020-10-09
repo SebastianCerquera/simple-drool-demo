@@ -11,6 +11,16 @@ public class CashFlow {
 	private Date date;
 	
 	private Double amount;
+	
+	public CashFlow() {}
+	
+	public CashFlow(CashFlowType type, Integer accountNo, 
+			Date date, Double amount) {
+		this.type = type;
+		this.accountNo = accountNo;
+		this.date = date;
+		this.amount = amount;
+	}
 
 	public Double getAmount() {
 		return amount;

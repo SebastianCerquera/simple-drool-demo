@@ -8,33 +8,28 @@ import java.util.List;
 import com.google.common.base.Verify;
 import com.utils.ComplexKieFacts;
 
-public class AccountComplexKie extends ComplexKieFacts<Account>{
-	
+public class AccountComplexKie extends ComplexKieFacts<Account> {
+
 	public List<Account> prepareFacts() {
-		return Arrays.asList(new Account[]{
-			new Account(1, 0.0),
-		});
+		return Arrays.asList(new Account[] { new Account(1, 0.0), new Account(2, 500.0)});
 	}
-	
+
 	@Override
 	protected List<?> prepareUniverse() {
 		List facts = new ArrayList();
-		facts.add(
-				new AccountPeriod(
-				   new Date(2019, 1, 1),
-				   new Date(2020, 1, 1)
-				)
-			);
+		facts.add(new AccountPeriod(new Date(2019, 1, 1), new Date(2020, 1, 1)));
+		facts.add(new CashFlow(CashFlowType.CREDIT, 1, new Date(2019, 5, 1), 100.0));
+		facts.add(new CashFlow(CashFlowType.DEBIT, 2, new Date(2019, 6, 1), 100.0));
 		return facts;
 	}
 
 	public List<Account> checkFacts() {
 		List<Account> factors = super.checkFacts();
 
-		Verify.verify(factors.get(0).getBalance() == 0);
-		
+		Verify.verify(factors.get(0).getBalance() == 100.0);
+		Verify.verify(factors.get(1).getBalance() == 400.0);
+
 		return factors;
 	}
-
 
 }
