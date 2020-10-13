@@ -1,3 +1,7 @@
+/*
+ * There are 2 rules, one per each product, the rule only checks the product name and sets the discount.
+ */
+
 import com.javainuse.model.Product
 
 rule "Offer for Diamond"

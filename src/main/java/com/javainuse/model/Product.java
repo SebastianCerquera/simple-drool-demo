@@ -1,5 +1,11 @@
 package com.javainuse.model;
 
+/*
+ * Each jewelery product has 2 fields a type: the component that the jewel is made of and the discount.
+ *  
+ * The discount is modeled using a integer and the product using an string name.
+ */
+
 public class Product {
 
 	private String type;

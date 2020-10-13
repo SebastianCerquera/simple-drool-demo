@@ -1,5 +1,11 @@
 package com.sample.candidate;
 
+/*
+ * This entity models the candidate under interview, this class holds of the entities created during the process.
+ * 
+ * The status, yrsExperience and skill is minimum required information.
+ */
+
 public class Candidate {
 	
 	private Integer id;

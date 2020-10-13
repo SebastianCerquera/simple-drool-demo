@@ -7,6 +7,17 @@ import java.util.List;
 import com.google.common.base.Verify;
 import com.utils.KieFacts;
 
+/*
+ *  This use case models the hiring process for a software engineer. The scenario is stateful so the facts 
+ *  are updated as the process goes on, these are the steps:
+ * 
+ * Check Experience
+ * Coding Test
+ * Coding Interview
+ * Project Interview
+ * 
+ */
+
 public class CheckCandidateKie extends KieFacts<Candidate>{
 	
 	public List<Candidate> prepareFacts() {

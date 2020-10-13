@@ -6,6 +6,11 @@ import java.util.List;
 import com.google.common.base.Verify;
 import com.utils.KieFacts;
 
+
+/*
+ * The scenario sets a rating to the client, to find out the rating it uses a factor value. The rating is computed depending
+ * on the range of the factor value, the lower the factor the better the rating.
+ */
 public class CheckFactorKie extends KieFacts<Factor>{
 	
 	public List<Factor> prepareFacts() {

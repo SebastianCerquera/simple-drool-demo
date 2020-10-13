@@ -1,5 +1,9 @@
 package com.sample.accounting;
 
+/*
+ * There are 2 fields that are required to model an account: The accountNo that is its identifier and the balance that is 
+ * amount that the account holds.
+ */
 public class Account {
 
 	private Integer accountNo;

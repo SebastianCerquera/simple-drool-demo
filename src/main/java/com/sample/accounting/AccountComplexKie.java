@@ -8,6 +8,17 @@ import java.util.List;
 import com.google.common.base.Verify;
 import com.utils.ComplexKieFacts;
 
+/*
+ * This scenario models the cashflow for a customer balance Account. It creates several facts that affect the account, 
+ * it should update the balance using these	 facts.
+ * 
+ * There are several entities:
+ * 
+ * Account
+ * CashFlow
+ * AccountPeriod
+ */
+
 public class AccountComplexKie extends ComplexKieFacts<Account> {
 
 	public List<Account> prepareFacts() {

@@ -2,6 +2,11 @@ package com.sample.accounting;
 
 import java.util.Date;
 
+/*
+ * This entity models each transaction perform over an account, each transaction requires an accountNo that identifies the account
+ * an amount that is the value, a type that indicates if it is a DEBIT or a CREDIT and finally the date of the transaction. 
+ */
+
 public class CashFlow {
 	
 	private CashFlowType type;

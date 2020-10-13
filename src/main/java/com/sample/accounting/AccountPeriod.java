@@ -2,6 +2,10 @@ package com.sample.accounting;
 
 import java.util.Date;
 
+/*
+ * The account period that bounds the transactions to a time frame
+ */
+
 public class AccountPeriod {
 
 	private Date start;
